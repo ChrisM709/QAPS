@@ -1,0 +1,21 @@
+# IntelliJ project files
+.idea/
+*.iml
+
+# VS Code settings
+.vscode/
+
+# Maven output folders
+target/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files 
+
+# Compiled class files 
+*.class
