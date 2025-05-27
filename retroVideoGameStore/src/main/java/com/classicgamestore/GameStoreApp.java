@@ -17,30 +17,29 @@ public class GameStoreApp {
                 new Game("Castlevania: Symphony of the Night", "PlayStation","Explore Dracula's castle in this cult classic.", 3, 42.50)
         );
 
-        // Step 1: Create a cart and purchase handler
+        // hardcoded process to test functions of the program
         Cart userCart = new Cart();
         PurchaseGame purchaseHandler = new PurchaseGame();
 
-        // Step 2: Simulate adding two games to the cart
-        userCart.addGame(games.get(0)); // Super Mario Bros
-        userCart.addGame(games.get(1)); // The Legend of Zelda
+        userCart.addGame(games.get(0));
+        userCart.addGame(games.get(1)); 
 
-        // Step 3: Display cart contents
+        // used to display all games in the cart
         System.out.println("Your Cart:");
         for (Game cartItem : userCart.getItems()) {
             System.out.println("- " + cartItem.getTitle() + " ($" + cartItem.getPrice() + ")");
         }
         System.out.println("Total: $" + userCart.getTotalPrice());
 
-        // Step 4: Attempt purchase
+        // process the payment
         System.out.println("\nProcessing Purchase...");
         boolean success = purchaseHandler.processPurchase(userCart);
 
-        // Step 5: Show updated stock if successful
+        // if the payment goes through the stock gets updated
         if (success) {
             System.out.println("\nUpdated Stock:");
             System.out.println(games.get(0).getTitle() + " - Remaining: " + games.get(0).getStock());
             System.out.println(games.get(1).getTitle() + " - Remaining: " + games.get(1).getStock());
         }
-    } // ← this now closes the main method properly ✅
+    }
 }
