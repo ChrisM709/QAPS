@@ -14,6 +14,33 @@ public class GameStoreApp {
                 new Game("Donkey Kong Country", "SNES", "Groundbreaking visuals in a jungle platformer.", 7, 27.99),
                 new Game("Final Fantasy VI", "SNES", "Epic JRPG with deep storytelling and characters.", 4, 44.99),
                 new Game("Mega Man X", "SNES", "Run-and-gun action with slick futuristic levels.", 9, 26.99),
-                new Game("Castlevania: Symphony of the Night", "PlayStation","Explore Dracula's castle in this cult classic.", 3, 42.50));
-    }
+                new Game("Castlevania: Symphony of the Night", "PlayStation","Explore Dracula's castle in this cult classic.", 3, 42.50)
+        );
+
+        // Step 1: Create a cart and purchase handler
+        Cart userCart = new Cart();
+        PurchaseGame purchaseHandler = new PurchaseGame();
+
+        // Step 2: Simulate adding two games to the cart
+        userCart.addGame(games.get(0)); // Super Mario Bros
+        userCart.addGame(games.get(1)); // The Legend of Zelda
+
+        // Step 3: Display cart contents
+        System.out.println("Your Cart:");
+        for (Game cartItem : userCart.getItems()) {
+            System.out.println("- " + cartItem.getTitle() + " ($" + cartItem.getPrice() + ")");
+        }
+        System.out.println("Total: $" + userCart.getTotalPrice());
+
+        // Step 4: Attempt purchase
+        System.out.println("\nProcessing Purchase...");
+        boolean success = purchaseHandler.processPurchase(userCart);
+
+        // Step 5: Show updated stock if successful
+        if (success) {
+            System.out.println("\nUpdated Stock:");
+            System.out.println(games.get(0).getTitle() + " - Remaining: " + games.get(0).getStock());
+            System.out.println(games.get(1).getTitle() + " - Remaining: " + games.get(1).getStock());
+        }
+    } // ← this now closes the main method properly ✅
 }
