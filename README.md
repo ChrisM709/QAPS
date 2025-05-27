@@ -1,4 +1,5 @@
 # 🎮 Retro Video Game Store (Java CLI Project)
+![Java CI](https://github.com/ChrisM709/QAPS/actions/workflows/maven.yml/badge.svg)
 
 This is a CLI-based Java application for managing a simple classic video game store. It was developed as part of the **SDAT & DevOps QAP 1** assignment and follows object-oriented principles, clean code practices, and includes automated unit tests with GitHub Actions CI.
 
