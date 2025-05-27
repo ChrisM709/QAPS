@@ -27,11 +27,18 @@ public class Game {
         return description;
     }
 
-    public int getStock(){
+    public int getStock() {
         return stock;
     }
 
     public double getPrice() {
         return price;
     }
+
+    public void reduceStockByOne() {
+        if (stock > 0) {
+            stock--;
+        }
+    }
+
 }
